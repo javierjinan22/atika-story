@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Untuk Atika Febriani — dari Javier Jinan</title>
+  <meta name="description" content="Sebuah pesan khusus.">
+  <meta name="theme-color" content="#0D0D0D">
+  <!-- Halaman ini pribadi: minta mesin pencari untuk tidak mengindeksnya. -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="Sebuah pesan khusus untukmu 💛">
+  <meta property="og:description" content="Buka perlahan. Ada cerita di dalamnya.">
+
+  <!-- Font: Cormorant Garamond (serif mewah) + Plus Jakarta Sans (sans bersih). Ganti di sini & di :root pada style.css -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Partikel cahaya emas (digambar oleh script.js) -->
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <main id="app">
+
+    <!-- =====================  HERO  ===================== -->
+    <section id="hero" class="hero" aria-labelledby="hero-name">
+      <div class="hero__inner">
+        <p class="hero__eyebrow" id="hero-eyebrow"></p>
+        <h1 class="hero__name" id="hero-name"></h1>
+        <p class="hero__lead" id="hero-lead"></p>
+        <span class="orn" aria-hidden="true"></span>
+        <button class="btn btn--glow hero__btn" id="btn-open" type="button"></button>
+      </div>
+    </section>
+
+    <!-- =====================  1. MEMORY LANE  ===================== -->
+    <section id="memories" class="chapter" hidden>
+      <header class="chapter__head">
+        <h2 class="chapter__title" id="memories-title"></h2>
+        <p class="chapter__sub" id="memories-sub"></p>
+      </header>
+
+      <div class="timeline" id="timeline">
+        <span class="timeline__line" aria-hidden="true"><span class="timeline__fill" id="timeline-fill"></span></span>
+        <div id="timeline-items"></div>
+      </div>
+
+      <div class="gallery" id="gallery">
+        <h3 class="gallery__title" id="gallery-title"></h3>
+        <p class="gallery__sub" id="gallery-sub"></p>
+        <div class="gallery__track" id="gallery-track" tabindex="0"></div>
+      </div>
+
+      <div class="chapter__next">
+        <button class="btn btn--ghost" id="btn-to-letter" type="button"></button>
+      </div>
+    </section>
+
+    <!-- =====================  2. SURAT  ===================== -->
+    <section id="letter" class="chapter" hidden>
+      <header class="chapter__head">
+        <h2 class="chapter__title" id="letter-title"></h2>
+        <p class="chapter__sub" id="letter-sub"></p>
+      </header>
+
+      <div class="letter-stage">
+        <div class="envelope" id="envelope" role="button" tabindex="0" aria-expanded="false" aria-label="Buka amplop surat">
+          <div class="env-back"></div>
+          <div class="env-paper" aria-hidden="true"></div>
+          <div class="env-front"></div>
+          <div class="env-flap"></div>
+          <div class="env-seal" id="env-seal" aria-hidden="true"></div>
+        </div>
+        <p class="envelope__hint" id="envelope-hint"></p>
+
+        <article class="letter" id="letter-paper" hidden>
+          <p class="letter__greeting" id="letter-greeting"></p>
+          <div class="letter__body" id="letter-body"></div>
+          <div class="letter__sign" id="letter-sign">
+            <span id="letter-sign-line"></span>
+            <strong id="letter-sign-name"></strong>
+          </div>
+        </article>
+
+        <button class="btn btn--text letter__skip" id="btn-skip" type="button" hidden></button>
+      </div>
+
+      <div class="chapter__next">
+        <button class="btn btn--glow" id="btn-to-proposal" type="button" hidden></button>
+      </div>
+    </section>
+
+    <!-- =====================  3. THE MOMENT OF TRUTH  ===================== -->
+    <section id="proposal" class="proposal" hidden aria-labelledby="proposal-question">
+      <div class="lamp" aria-hidden="true">
+        <div class="lamp__swing">
+          <span class="lamp__cord"></span>
+          <span class="lamp__bulb"></span>
+          <span class="lamp__cone"></span>
+        </div>
+      </div>
+
+      <div class="proposal__inner">
+        <p class="proposal__eyebrow reveal-item" style="--i:0" id="proposal-eyebrow"></p>
+        <h2 class="proposal__question reveal-item" style="--i:1" id="proposal-question">
+          <span class="proposal__name gold-text" id="proposal-name"></span>
+          <span id="proposal-ask"></span>
+        </h2>
+        <p class="proposal__en reveal-item" style="--i:2" id="proposal-en"></p>
+
+        <div class="choices reveal-item" style="--i:3" id="choices">
+          <button class="btn btn--gold btn--yes" id="btn-yes" type="button"></button>
+          <div class="slot-no" id="slot-no">
+            <button class="btn btn--no" id="btn-no" type="button"></button>
+          </div>
+        </div>
+        <p class="proposal__hint reveal-item" style="--i:4" id="no-hint" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pop-up manis saat tombol "belum bisa" dicoba -->
+  <div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal__card">
+      <h3 class="modal__title" id="modal-title"></h3>
+      <p class="modal__text" id="modal-text"></p>
+      <div class="modal__actions" id="modal-actions"></div>
+    </div>
+  </div>
+
+  <!-- Layar perayaan setelah menekan "YA" -->
+  <div class="celebration" id="celebration" hidden role="dialog" aria-modal="true" aria-labelledby="cel-title">
+    <div class="celebration__card">
+      <h2 class="celebration__title gold-text" id="cel-title"></h2>
+      <p class="celebration__sign" id="cel-sign"></p>
+      <p class="celebration__text" id="cel-text"></p>
+      <div class="celebration__actions">
+        <a class="btn btn--gold" id="wa-link" href="#" target="_blank" rel="noopener"></a>
+        <button class="btn btn--text" id="btn-replay" type="button"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tombol musik mengambang -->
+  <button class="music" id="music" type="button" aria-pressed="false" aria-label="Putar musik">
+    <span class="music__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  </button>
+  <audio id="bgm" loop preload="none"></audio>
+
+  <noscript>
+    <p style="position:relative;z-index:5;padding:2rem;text-align:center;color:#F7E7CE">
+      Halaman ini membutuhkan JavaScript agar bisa dibuka. 💛
+    </p>
+  </noscript>
+
+  <!-- Konfeti & kembang api (CDN). Jika gagal dimuat, halaman tetap berjalan normal. -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
