@@ -74,21 +74,21 @@ const CONFIG = {
       {
         label: 'Bab satu',
         title: 'Momen Pertama Kenal',
-        text: 'Awalnya hanya sebuah sapaan sederhana. Aku belum tahu bahwa perkenalan kecil itu akan jadi salah satu cerita yang paling kusukai.',
+        text: 'Awalnya hanya saling tau antara aku kamu. Aku belum tahu bahwa perkenalan kecil itu akan jadi salah satu cerita yang menjadi awal aku mulai memperhatikanmu.',
         caption: 'Awal cerita',
         media: { type: 'image', src: 'assets/foto1.jpg', ratio: '3 / 4', focus: '50% 85%' },   // ← foto 1
       },
       {
         label: 'Bab dua',
         title: 'Momen Paling Berkesan',
-        text: 'Ada hari-hari yang lewat begitu saja, dan ada hari yang menempel di ingatan. Hari bersamamu selalu yang kedua: penuh tawa tanpa alasan.',
+        text: 'Dari dulu aku sebenernya merhatiin kamu terus, tapi aku masih ga berani dan antara malu malu atau mau mau, entah kenapa tiap kita ngobrol tuh rasanya nyaman dan nyambung banget kitaa tuhhhh hihhh.',
         caption: 'Hari yang hangat',
         media: { type: 'image', src: 'assets/foto2.jpg', ratio: '4 / 3', focus: '58% 40%' },   // ← foto 2
       },
       {
         label: 'Bab tiga',
         title: 'Alasan {receiverShort} Begitu Spesial',
-        text: 'Bukan karena satu hal besar, tapi karena banyak hal kecil: caramu tersenyum, caramu peduli, dan caramu membuat hari yang berat terasa lebih ringan.',
+        text: 'Bukan karena satu hal besar, tapi karena banyak hal kecil: caramu tersenyum, caramu peduli, caramu memaafkan dan kamu yang selalu jadi perhatianku. Banyak hal dan kesempatan yang kita sebenernya bisa aja sendiri sendiri, tapi gatau kenapa selalu ke kamu.',
         caption: 'Selalu nyaman',
         media: { type: 'image', src: 'assets/foto3.jpg', ratio: '4 / 3', focus: '60% 38%' },   // ← foto 3
       },
@@ -124,7 +124,7 @@ const CONFIG = {
     hint: 'Ketuk untuk membuka',
     greeting: 'Untuk {receiver},',
     paragraphs: [
-      'Aku tidak pandai merangkai kata, tapi malam ini aku ingin jujur. Sejak mengenalmu, hari-hariku terasa lebih hangat dan lebih berwarna dari sebelumnya.',
+      'Aku ga pandai merangkai kata, tapi malam ini aku ingin jujur. Sejak deket sama kamu, hari-hariku terasa lebih hangat dan lebih berwarna dari sebelumnya.',
       'Kamu punya cara sederhana untuk membuat orang di sekitarmu merasa dihargai. Senyummu, tawamu, dan caramu menjadi dirimu sendiri adalah hal-hal yang diam-diam selalu kutunggu.',
       'Aku sadar, perasaan ini bukan sekadar kagum. Aku ingin lebih sering ada di dekatmu: mendengar ceritamu, menemani harimu yang baik maupun yang melelahkan, dan tumbuh bersama dengan cara yang baik.',
       'Aku tidak menjanjikan hal yang sempurna. Tapi aku berjanji untuk tulus, menghargaimu, dan menjagamu dengan sepenuh hati.',
